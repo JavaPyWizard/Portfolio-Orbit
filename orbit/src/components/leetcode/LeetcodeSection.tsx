@@ -455,11 +455,11 @@ export default function LeetcodeSection() {
               </div>
             </div>
 
-            {/* Top Skills */}
+            {/* Toicss */}
             {data.skillTags && data.skillTags.length > 0 && (
               <div className="glass-card p-6 mb-8">
                 <h4 className="text-sm font-semibold text-text mb-4 flex items-center gap-2">
-                  <Code className="w-4 h-4 text-primary" /> Top Skills
+                  <Code className="w-4 h-4 text-primary" /> Topics
                 </h4>
                 <div className="flex flex-wrap gap-2">
                   {data.skillTags.map((tag) => (
