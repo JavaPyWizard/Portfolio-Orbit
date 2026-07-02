@@ -34,7 +34,6 @@ const secondaryNavItems: { scene: Scene; label: string; icon: React.ElementType 
   { scene: 'experience', label: 'Experience', icon: Briefcase },
   { scene: 'github', label: 'GitHub', icon: Github },
   { scene: 'leetcode', label: 'LeetCode', icon: Terminal },
-  { scene: 'certificates', label: 'Certificates', icon: Award },
   { scene: 'resume', label: 'Resume', icon: FileText },
   { scene: 'contact', label: 'Contact', icon: Mail },
 ]

@@ -15,11 +15,10 @@ import ProjectsSection from "@components/projects/ProjectsSection";
 import ExperienceSection from "@components/experience/ExperienceSection";
 import GithubSection from "@components/github/GithubSection";
 import LeetcodeSection from "@components/leetcode/LeetcodeSection";
-import CertificatesSection from "@components/certificates/CertificatesSection";
 import ResumeSection from "@components/resume/ResumeSection";
 import ContactSection from "@components/contact/ContactSection";
 import FooterSection from "@components/footer/FooterSection";
-import ScrollProgress from '@components/ui/ScrollProgress'
+import ScrollProgress from "@components/ui/ScrollProgress";
 
 const sectionIds: Record<string, string> = {
   hero: "hero",
@@ -30,7 +29,6 @@ const sectionIds: Record<string, string> = {
   experience: "experience",
   github: "github",
   leetcode: "leetcode",
-  certificates: "certificates",
   resume: "resume",
   contact: "contact",
 };
@@ -44,7 +42,6 @@ const sections = [
   { id: "experience", Component: ExperienceSection },
   { id: "github", Component: GithubSection },
   { id: "leetcode", Component: LeetcodeSection },
-  { id: "certificates", Component: CertificatesSection },
   { id: "resume", Component: ResumeSection },
   { id: "contact", Component: ContactSection },
 ];
@@ -92,8 +89,9 @@ export default function Home() {
       }, 1500);
     };
 
-    window.addEventListener('orbit-manual-nav', handleManualNav);
-    return () => window.removeEventListener('orbit-manual-nav', handleManualNav);
+    window.addEventListener("orbit-manual-nav", handleManualNav);
+    return () =>
+      window.removeEventListener("orbit-manual-nav", handleManualNav);
   }, []);
 
   // Track scroll progress for 3D camera
@@ -126,7 +124,7 @@ export default function Home() {
       (entries) => {
         // Skip if user manually clicked a nav item
         if (isManualScrolling.current) return;
-        
+
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             const scene = entry.target.id;
@@ -165,15 +163,15 @@ export default function Home() {
                 key={id}
                 id={id}
                 initial={{ opacity: 0, y: 60, scale: 0.97 }}
-                whileInView={{ 
-                  opacity: 1, 
-                  y: 0, 
+                whileInView={{
+                  opacity: 1,
+                  y: 0,
                   scale: 1,
                   transition: {
                     duration: 1.0,
                     ease: [0.25, 0.1, 0.25, 1],
                     delay: index * 0.05,
-                  }
+                  },
                 }}
                 viewport={{ once: true, margin: "-50px" }}
               >
