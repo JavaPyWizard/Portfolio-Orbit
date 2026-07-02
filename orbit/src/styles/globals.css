@@ -1,0 +1,165 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* === ORBIT Global Styles === */
+
+@font-face {
+  font-family: 'Geist Sans';
+  src: url('https://cdn.jsdelivr.net/npm/geist@1.2.0/dist/fonts/geist-sans/Geist-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Geist Sans';
+  src: url('https://cdn.jsdelivr.net/npm/geist@1.2.0/dist/fonts/geist-sans/Geist-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Geist Sans';
+  src: url('https://cdn.jsdelivr.net/npm/geist@1.2.0/dist/fonts/geist-sans/Geist-SemiBold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Geist Sans';
+  src: url('https://cdn.jsdelivr.net/npm/geist@1.2.0/dist/fonts/geist-sans/Geist-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Geist Mono';
+  src: url('https://cdn.jsdelivr.net/npm/geist@1.2.0/dist/fonts/geist-mono/GeistMono-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Geist Mono';
+  src: url('https://cdn.jsdelivr.net/npm/geist@1.2.0/dist/fonts/geist-mono/GeistMono-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: #050816;
+  color: #F8FAFC;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: 'Geist Sans', system-ui, sans-serif;
+  background-color: #050816;
+  color: #F8FAFC;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+/* === Scrollbar === */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0D1224;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #3B82F6;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #8B5CF6;
+}
+
+/* === Selection === */
+::selection {
+  background: rgba(59, 130, 246, 0.3);
+  color: #F8FAFC;
+}
+
+/* === Focus === */
+:focus-visible {
+  outline: 2px solid #3B82F6;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* === Reduced Motion === */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* === Glass Card Utility === */
+.glass-card {
+  background: rgba(21, 28, 52, 0.8);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(59, 130, 246, 0.15);
+  border-radius: 16px;
+}
+
+.glass-card:hover {
+  border-color: rgba(59, 130, 246, 0.3);
+  box-shadow: 0 0 30px rgba(59, 130, 246, 0.1);
+}
+
+/* === Glow Text Utility === */
+.glow-text {
+  text-shadow: 0 0 20px rgba(59, 130, 246, 0.5),
+               0 0 40px rgba(59, 130, 246, 0.2);
+}
+
+/* === Grid Background === */
+.bg-grid {
+  background-image: 
+    linear-gradient(rgba(59, 130, 246, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(59, 130, 246, 0.05) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+/* === Magnetic Button === */
+.magnetic-btn {
+  transition: transform 0.2s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.magnetic-btn:hover {
+  transform: scale(1.05);
+}
+
+.magnetic-btn:active {
+  transform: scale(0.98);
+}
+
+/* === Performance Mode === */
+.performance-mode .bloom-effect,
+.performance-mode .particle-field,
+.performance-mode .expensive-shader {
+  display: none;
+}
