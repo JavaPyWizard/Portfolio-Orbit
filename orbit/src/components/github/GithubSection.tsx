@@ -307,7 +307,7 @@ export default function GithubSection() {
 
       if (!userData) throw new Error("Failed to load");
 
-      // Get total contributions from events (approximate)
+
       let contribCount = userData.public_repos * 5;
 
       setUser(userData);
@@ -355,7 +355,6 @@ export default function GithubSection() {
   return (
     <section className="relative min-h-screen py-24 z-10" id="github">
       <div className="max-w-5xl mx-auto px-6">
-        {/* Section Header */}
         <motion.div
           className="mb-16"
           initial={{ opacity: 0, y: 30 }}
@@ -382,7 +381,6 @@ export default function GithubSection() {
           </a>
         </motion.div>
 
-        {/* Loading */}
         {loading && (
           <div className="animate-pulse space-y-6">
             <div className="grid grid-cols-2 gap-4">
@@ -393,17 +391,14 @@ export default function GithubSection() {
           </div>
         )}
 
-        {/* Error */}
         {error && !loading && (
           <div className="glass-card p-8 text-center mb-8">
             <p className="text-muted text-sm">{error}</p>
           </div>
         )}
 
-        {/* Data */}
         {!loading && user && (
           <>
-            {/* Stats Row */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
               <div className="glass-card p-4 text-center">
                 <Star className="w-5 h-5 text-yellow-400 mx-auto mb-2" />
@@ -429,7 +424,6 @@ export default function GithubSection() {
               </div>
             </div>
 
-            {/* Top Repos */}
             <h3 className="text-lg font-semibold mb-4 text-text">
               Top Repositories
             </h3>
@@ -482,7 +476,6 @@ export default function GithubSection() {
               ))}
             </div>
 
-            {/* Language Bar + Recent Activity */}
             <div className="grid md:grid-cols-2 gap-8 mb-8">
               <LanguageBar repos={repos} />
 
@@ -516,7 +509,6 @@ export default function GithubSection() {
               </div>
             </div>
 
-            {/* Contribution Graph */}
             <ContributionGrid />
           </>
         )}

@@ -52,7 +52,7 @@ export default function CommandPalette() {
       )
     : commands
 
-  // Keyboard shortcut
+
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
@@ -68,7 +68,7 @@ export default function CommandPalette() {
     return () => window.removeEventListener('keydown', handleKeyDown)
   }, [toggleCommandPalette, closeCommandPalette])
 
-  // Reset when opening
+
   useEffect(() => {
     if (isCommandPaletteOpen) {
       setQuery('')
@@ -114,13 +114,11 @@ export default function CommandPalette() {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
         >
-          {/* Backdrop */}
           <motion.div
             className="absolute inset-0 bg-background/80 backdrop-blur-sm"
             onClick={closeCommandPalette}
           />
 
-          {/* Palette */}
           <motion.div
             className="relative z-10 w-full max-w-lg mx-4 glass-card overflow-hidden"
             initial={{ opacity: 0, scale: 0.95, y: -20 }}
@@ -128,7 +126,6 @@ export default function CommandPalette() {
             exit={{ opacity: 0, scale: 0.95, y: -20 }}
             transition={{ duration: 0.2 }}
           >
-            {/* Search Input */}
             <div className="flex items-center gap-3 px-4 py-3 border-b border-primary/10">
               <Search className="w-5 h-5 text-muted" />
               <input
@@ -148,7 +145,6 @@ export default function CommandPalette() {
               </kbd>
             </div>
 
-            {/* Results */}
             <div className="max-h-64 overflow-y-auto p-2">
               {filteredCommands.length === 0 ? (
                 <div className="text-center text-muted py-8 text-sm">No results found</div>
@@ -185,7 +181,6 @@ export default function CommandPalette() {
               )}
             </div>
 
-            {/* Footer */}
             <div className="px-4 py-2 border-t border-primary/10 flex items-center gap-4 text-xs text-muted">
               <span>↑↓ Navigate</span>
               <span>↵ Select</span>

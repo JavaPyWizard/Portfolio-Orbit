@@ -14,7 +14,7 @@ export function CinematicParticles() {
   const pointsRef = useRef<THREE.Points>(null);
   const progressRef = useRef(0);
   const speedsRef = useRef<Float32Array>(new Float32Array());
-  const count = 800; // Reduced from 2000
+  const count = 800;
 
   const geometry = useMemo(() => {
     const pos = new Float32Array(count * 3);
@@ -75,7 +75,7 @@ export function CinematicParticles() {
     const progress = progressRef.current;
     const time = state.clock.elapsedTime;
 
-    // Fade out particles as scroll progresses
+
     const opacity = Math.max(0.15, 0.7 - progress * 0.6);
     const material = pointsRef.current.material as THREE.PointsMaterial;
     material.opacity = opacity;

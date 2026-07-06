@@ -31,7 +31,7 @@ function GithubIcon({ className }: { className?: string }) {
   )
 }
 
-// Star rating component
+
 function StarRating({ filled, total = 5 }: { filled: number; total?: number }) {
   return (
     <div className="flex gap-0.5">
@@ -49,7 +49,7 @@ function StarRating({ filled, total = 5 }: { filled: number; total?: number }) {
   )
 }
 
-// Tech badge with icon
+
 function TechBadge({ name, icon: Icon, color }: { name: string; icon: React.ElementType; color: string }) {
   return (
     <motion.div
@@ -57,7 +57,6 @@ function TechBadge({ name, icon: Icon, color }: { name: string; icon: React.Elem
       whileHover={{ y: -3 }}
       transition={{ type: 'spring', stiffness: 300, damping: 20 }}
     >
-      {/* Animated border on hover */}
       <div className="absolute inset-0 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"
         style={{
           background: `linear-gradient(90deg, transparent, ${color}20, transparent)`,
@@ -73,7 +72,7 @@ function TechBadge({ name, icon: Icon, color }: { name: string; icon: React.Elem
   )
 }
 
-// Parallax card for outside coding
+
 function ParallaxCard({ emoji, label }: { emoji: string; label: string }) {
   const cardRef = useRef<HTMLDivElement>(null)
   const [offset, setOffset] = useState({ x: 0, y: 0 })
@@ -137,14 +136,12 @@ export default function AboutSection() {
   return (
     <section ref={sectionRef} className="relative min-h-screen py-32 z-10" id="about">
       <div className="max-w-6xl mx-auto px-6">
-        {/* ========== PROFILE HEADER ========== */}
         <motion.div
           className="flex flex-col lg:flex-row items-center lg:items-start gap-12 mb-20"
           initial={{ opacity: 0 }}
           animate={isInView ? { opacity: 1 } : {}}
           transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1] }}
         >
-          {/* Photo */}
           <div className="relative flex-shrink-0">
             <div className="relative">
               <div className="absolute inset-0 rounded-full border border-primary/10 animate-spin"
@@ -155,7 +152,6 @@ export default function AboutSection() {
             </div>
           </div>
 
-          {/* Identity */}
           <div className="flex-1 text-center lg:text-left">
             <h2 className="text-4xl md:text-5xl font-bold mb-2">
               Divyansh <span className="glow-text">Kumar Singh</span>
@@ -181,7 +177,6 @@ export default function AboutSection() {
               Every project is an opportunity to write better code, think deeper, and grow as a developer.
             </p>
 
-            {/* Stats */}
             <div className="flex gap-8 mt-8 justify-center lg:justify-start">
               {[
                 { value: '6+', label: 'Projects' },
@@ -197,7 +192,6 @@ export default function AboutSection() {
           </div>
         </motion.div>
 
-        {/* ========== TECH STACK - WITH ICONS ========== */}
         <motion.div
           className="mb-20"
           initial={{ opacity: 0 }}
@@ -210,7 +204,6 @@ export default function AboutSection() {
           </h3>
 
           <div className="space-y-6 max-w-3xl mx-auto">
-            {/* Languages */}
             <div className="flex flex-wrap items-baseline gap-x-3 gap-y-2">
               <span className="text-sm text-primary font-mono font-medium w-20 flex-shrink-0">Languages</span>
               <div className="flex flex-wrap gap-2">
@@ -222,7 +215,6 @@ export default function AboutSection() {
               </div>
             </div>
 
-            {/* Frontend */}
             <div className="flex flex-wrap items-baseline gap-x-3 gap-y-2">
               <span className="text-sm text-primary font-mono font-medium w-20 flex-shrink-0">Frontend</span>
               <div className="flex flex-wrap gap-2">
@@ -231,7 +223,6 @@ export default function AboutSection() {
               </div>
             </div>
 
-            {/* Database */}
             <div className="flex flex-wrap items-baseline gap-x-3 gap-y-2">
               <span className="text-sm text-primary font-mono font-medium w-20 flex-shrink-0">Database</span>
               <div className="flex flex-wrap gap-2">
@@ -239,7 +230,6 @@ export default function AboutSection() {
               </div>
             </div>
 
-            {/* Tools */}
             <div className="flex flex-wrap items-baseline gap-x-3 gap-y-2">
               <span className="text-sm text-primary font-mono font-medium w-20 flex-shrink-0">Tools</span>
               <div className="flex flex-wrap gap-2">
@@ -250,7 +240,6 @@ export default function AboutSection() {
               </div>
             </div>
 
-            {/* Core CS */}
             <div className="flex flex-wrap items-baseline gap-x-3 gap-y-2">
               <span className="text-sm text-primary font-mono font-medium w-20 flex-shrink-0">Core CS</span>
               <div className="flex flex-wrap gap-2">
@@ -262,9 +251,7 @@ export default function AboutSection() {
           </div>
         </motion.div>
 
-        {/* ========== FOCUS AREAS + PRINCIPLES ========== */}
         <div className="grid lg:grid-cols-2 gap-16 mb-20">
-          {/* Focus Areas with Stars */}
           <div>
             <h3 className="text-xl font-bold mb-8 flex items-center gap-2">
               <Target className="w-5 h-5 text-accent" />
@@ -289,14 +276,12 @@ export default function AboutSection() {
             </div>
           </div>
 
-          {/* Principles - Timeline */}
           <div>
             <h3 className="text-xl font-bold mb-8 flex items-center gap-2">
               <Lightbulb className="w-5 h-5 text-yellow-400" />
               What I <span className="glow-text">Believe</span>
             </h3>
             <div className="relative">
-              {/* Vertical timeline line */}
               <div className="absolute left-[5px] top-2 bottom-2 w-px bg-gradient-to-b from-primary/40 via-primary/20 to-transparent" />
 
               <div className="space-y-6">
@@ -329,7 +314,6 @@ export default function AboutSection() {
           </div>
         </div>
 
-        {/* ========== OUTSIDE CODING ========== */}
         <motion.div
           className="text-center"
           initial={{ opacity: 0, y: 20 }}
@@ -347,7 +331,6 @@ export default function AboutSection() {
         </motion.div>
       </div>
 
-      {/* Shimmer animation style */}
       <style jsx>{`
         @keyframes shimmer {
           0% { background-position: -200% 0; }

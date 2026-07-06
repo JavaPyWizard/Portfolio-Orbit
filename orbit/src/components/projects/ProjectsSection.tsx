@@ -61,7 +61,7 @@ const projects = [
     live: null,
     video: "/crosssafe-demo.mov",
     features: [
-      
+
       "Automated traffic light state transitions (Red, Yellow, Green)",
       "Real-time countdown timer for each signal phase",
       "Pedestrian crossing status indicator",
@@ -86,7 +86,6 @@ export default function ProjectsSection() {
   return (
     <section className="relative min-h-screen py-24 z-10" id="projects">
       <div className="max-w-5xl mx-auto px-6">
-        {/* Section Header */}
         <motion.div
           className="mb-16"
           initial={{ opacity: 0, y: 30 }}
@@ -105,7 +104,6 @@ export default function ProjectsSection() {
           </div>
         </motion.div>
 
-        {/* Project Cards */}
         <div className="space-y-4">
           {projects.map((project, index) => (
             <motion.div
@@ -116,7 +114,6 @@ export default function ProjectsSection() {
               viewport={{ once: true }}
               transition={{ delay: index * 0.1, duration: 0.5 }}
             >
-              {/* Header */}
               <button
                 onClick={() => toggleExpand(project.id)}
                 className="w-full text-left group"
@@ -167,7 +164,6 @@ export default function ProjectsSection() {
                 </div>
               </button>
 
-              {/* Expanded Content */}
               <AnimatePresence>
                 {expandedId === project.id && (
                   <motion.div
@@ -248,7 +244,6 @@ export default function ProjectsSection() {
           ))}
         </div>
 
-        {/* Video Modal */}
         <AnimatePresence>
           {showVideo && (
             <motion.div

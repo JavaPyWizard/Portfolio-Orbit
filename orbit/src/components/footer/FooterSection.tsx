@@ -12,7 +12,6 @@ export default function FooterSection() {
     <footer className="relative z-10 border-t border-primary/10">
       <div className="max-w-6xl mx-auto px-6 py-12">
         <div className="flex flex-col md:flex-row items-center justify-between gap-8">
-          {/* Brand */}
           <div className="text-center md:text-left">
             <h3 className="text-xl font-bold glow-text">ORBIT</h3>
             <p className="text-sm text-muted mt-1">
@@ -20,7 +19,6 @@ export default function FooterSection() {
             </p>
           </div>
 
-          {/* Links */}
           <div className="flex items-center gap-6">
             <a
               href="https://github.com/JavaPyWizard"
@@ -60,7 +58,6 @@ export default function FooterSection() {
             </a>
           </div>
 
-          {/* Scroll to Top */}
           <button
             onClick={scrollToTop}
             className="p-3 rounded-xl glass-card hover:border-primary/30 transition-all group"
@@ -70,7 +67,6 @@ export default function FooterSection() {
           </button>
         </div>
 
-        {/* Bottom */}
         <div className="mt-8 pt-8 border-t border-primary/10 text-center">
           <p className="text-sm text-muted flex items-center justify-center gap-1">
             Built with <Heart className="w-3.5 h-3.5 text-danger inline" /> by

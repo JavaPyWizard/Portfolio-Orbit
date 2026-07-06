@@ -11,7 +11,7 @@ import {
   Lock,
 } from "lucide-react";
 
-// ===== DATA =====
+
 const educationData = [
   {
     id: "school",
@@ -616,7 +616,6 @@ export default function EducationSection() {
         </motion.div>
 
         <div className="grid md:grid-cols-2 gap-4 mb-6">
-          {/* School Card */}
           <div>
             <motion.button
               onClick={() => handleCardClick("school")}
@@ -730,7 +729,6 @@ export default function EducationSection() {
             </div>
           </div>
 
-          {/* Bachelors Card */}
           <div>
             <motion.button
               onClick={() => handleCardClick("bachelors")}
@@ -772,7 +770,6 @@ export default function EducationSection() {
               </div>
             </motion.button>
 
-            {/* Floating semester buttons - more spacious & dramatic */}
             <div className="relative h-32 mt-4">
               {[1, 2, 3, 4].map((sem, index) => {
                 const positions = [
@@ -890,7 +887,6 @@ export default function EducationSection() {
                 );
               })}
 
-              {/* Locked semesters */}
               {[5, 6, 7, 8].map((sem, index) => {
                 const lockedPositions = [
                   { left: "5%", bottom: "5%" },

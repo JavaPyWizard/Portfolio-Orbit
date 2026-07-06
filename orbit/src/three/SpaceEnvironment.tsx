@@ -10,7 +10,7 @@ export function SpaceEnvironment() {
 
   const starsGeometry = useMemo(() => {
     const geo = new THREE.BufferGeometry()
-    const count = 1000 // Reduced from 3000
+    const count = 1000
     const positions = new Float32Array(count * 3)
     const sizes = new Float32Array(count)
 
@@ -33,7 +33,7 @@ export function SpaceEnvironment() {
 
   const nebulaGeometry = useMemo(() => {
     const geo = new THREE.BufferGeometry()
-    const count = 200 // Reduced from 500
+    const count = 200
     const positions = new Float32Array(count * 3)
     const colors = new Float32Array(count * 3)
 

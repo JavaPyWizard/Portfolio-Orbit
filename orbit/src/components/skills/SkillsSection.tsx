@@ -25,7 +25,7 @@ import {
   BrainCircuitIcon,
 } from 'lucide-react'
 
-// ===== SKILL DATA =====
+
 const skillCategories = [
   {
     id: 'languages',
@@ -115,7 +115,7 @@ const beyondCoding = [
   { emoji: '☕', label: 'Coffee' },
 ]
 
-// ===== SUB COMPONENTS =====
+
 
 function SkillBar({ name, level, accent }: { name: string; level: number; accent: string }) {
   return (
@@ -154,12 +154,10 @@ function CategoryCard({ category, index }: { category: any; index: number }) {
       onMouseLeave={() => setIsHovered(false)}
       whileHover={{ y: -4 }}
     >
-      {/* Animated border gradient */}
       <div
         className={`absolute inset-0 bg-gradient-to-br ${category.color} opacity-0 group-hover:opacity-100 transition-opacity duration-500`}
       />
 
-      {/* Floating accent orb */}
       <motion.div
         className="absolute -top-6 -right-6 w-20 h-20 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"
         style={{ backgroundColor: category.accent }}
@@ -168,7 +166,6 @@ function CategoryCard({ category, index }: { category: any; index: number }) {
       />
 
       <div className="relative z-10">
-        {/* Header */}
         <div className="flex items-center gap-3 mb-5">
           <div
             className="w-10 h-10 rounded-xl flex items-center justify-center transition-colors duration-300"
@@ -179,7 +176,6 @@ function CategoryCard({ category, index }: { category: any; index: number }) {
           <h3 className="font-semibold text-text text-sm">{category.title}</h3>
         </div>
 
-        {/* Skills */}
         <div className="space-y-3">
           {category.skills.map((skill: any) => (
             <SkillBar
@@ -199,7 +195,6 @@ export default function SkillsSection() {
   return (
     <section className="relative min-h-screen py-24 z-10" id="skills">
       <div className="max-w-6xl mx-auto px-6">
-        {/* Section Header */}
         <motion.div
           className="mb-16"
           initial={{ opacity: 0, y: 30 }}
@@ -213,16 +208,13 @@ export default function SkillsSection() {
           </h2>
         </motion.div>
 
-        {/* Skill Category Cards */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-16">
           {skillCategories.map((category, index) => (
             <CategoryCard key={category.id} category={category} index={index} />
           ))}
         </div>
 
-        {/* Currently Learning + Soft Skills */}
         <div className="grid md:grid-cols-2 gap-6 mb-16">
-          {/* Currently Learning */}
           <motion.div
             className="glass-card p-6"
             initial={{ opacity: 0, x: -20 }}
@@ -255,7 +247,6 @@ export default function SkillsSection() {
             </div>
           </motion.div>
 
-          {/* Soft Skills */}
           <motion.div
             className="glass-card p-6"
             initial={{ opacity: 0, x: 20 }}
@@ -287,7 +278,6 @@ export default function SkillsSection() {
           </motion.div>
         </div>
 
-        {/* Beyond Coding */}
         <motion.div
           className="text-center"
           initial={{ opacity: 0, y: 20 }}

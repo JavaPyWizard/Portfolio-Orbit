@@ -51,7 +51,7 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  // Close dropdown when clicking outside
+
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
       const target = e.target as HTMLElement
@@ -67,11 +67,11 @@ export default function Navbar() {
     closeNav()
     setDropdownOpen(false)
     setScene(scene)
-    
-    // Signal manual navigation
+
+
     window.dispatchEvent(new CustomEvent('orbit-manual-nav'))
-    
-    // Direct scroll
+
+
     setTimeout(() => {
       const el = document.getElementById(scene)
       if (el) {
@@ -84,7 +84,6 @@ export default function Navbar() {
 
   return (
     <>
-      {/* Desktop Navigation */}
       <motion.nav
         className={cn(
           'fixed top-0 left-0 right-0 z-40 transition-all duration-300',
@@ -98,7 +97,6 @@ export default function Navbar() {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
-            {/* Logo */}
             <button
               onClick={() => handleNavClick('hero')}
               className="flex items-center gap-2 group"
@@ -107,9 +105,7 @@ export default function Navbar() {
               <span className="text-lg font-bold tracking-tight glow-text">ORBIT</span>
             </button>
 
-            {/* Desktop Links */}
             <div className="hidden lg:flex items-center gap-1">
-              {/* Primary nav items */}
               {primaryNavItems.map((item) => (
                 <button
                   key={item.scene}
@@ -135,7 +131,6 @@ export default function Navbar() {
                 </button>
               ))}
 
-              {/* More Dropdown */}
               <div className="more-dropdown relative">
                 <button
                   onClick={() => setDropdownOpen(!dropdownOpen)}
@@ -162,7 +157,6 @@ export default function Navbar() {
                   </span>
                 </button>
 
-                {/* Dropdown Menu */}
                 <AnimatePresence>
                   {dropdownOpen && (
                     <motion.div
@@ -193,7 +187,6 @@ export default function Navbar() {
               </div>
             </div>
 
-            {/* Mobile Menu Button */}
             <button
               onClick={toggleNav}
               className="lg:hidden p-2 rounded-lg hover:bg-surface transition-colors"
@@ -205,7 +198,6 @@ export default function Navbar() {
         </div>
       </motion.nav>
 
-      {/* Mobile Navigation - shows all items */}
       <AnimatePresence>
         {isNavOpen && (
           <motion.div

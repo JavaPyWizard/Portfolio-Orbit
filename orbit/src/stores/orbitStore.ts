@@ -19,12 +19,12 @@ export type Scene =
 export type BootPhase = 'initializing' | 'loading' | 'complete'
 
 interface OrbitState {
-  // Scene Management
+
   currentScene: Scene
   previousScene: Scene | null
   setScene: (scene: Scene) => void
 
-  // Boot Sequence
+
   bootPhase: BootPhase
   bootProgress: number
   bootMessages: string[]
@@ -34,27 +34,27 @@ interface OrbitState {
   addBootMessage: (message: string) => void
   completeBoot: () => void
 
-  // Navigation
+
   isNavOpen: boolean
   toggleNav: () => void
   closeNav: () => void
 
-  // Sound
+
   isSoundEnabled: boolean
   toggleSound: () => void
 
-  // Performance
+
   isPerformanceMode: boolean
   setPerformanceMode: (mode: boolean) => void
 
-  // UI State
+
   isCommandPaletteOpen: boolean
   toggleCommandPalette: () => void
   closeCommandPalette: () => void
 }
 
 export const useOrbitStore = create<OrbitState>((set, get) => ({
-  // Scene Management
+
   currentScene: 'boot',
   previousScene: null,
   setScene: (scene) =>
@@ -63,7 +63,7 @@ export const useOrbitStore = create<OrbitState>((set, get) => ({
       currentScene: scene,
     })),
 
-  // Boot Sequence
+
   bootPhase: 'initializing',
   bootProgress: 0,
   bootMessages: [],
@@ -79,20 +79,20 @@ export const useOrbitStore = create<OrbitState>((set, get) => ({
       bootProgress: 100,
     }),
 
-  // Navigation
+
   isNavOpen: false,
   toggleNav: () => set((state) => ({ isNavOpen: !state.isNavOpen })),
   closeNav: () => set({ isNavOpen: false }),
 
-  // Sound
+
   isSoundEnabled: false,
   toggleSound: () => set((state) => ({ isSoundEnabled: !state.isSoundEnabled })),
 
-  // Performance
+
   isPerformanceMode: false,
   setPerformanceMode: (mode) => set({ isPerformanceMode: mode }),
 
-  // Command Palette
+
   isCommandPaletteOpen: false,
   toggleCommandPalette: () =>
     set((state) => ({ isCommandPaletteOpen: !state.isCommandPaletteOpen })),

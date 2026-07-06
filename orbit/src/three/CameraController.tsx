@@ -34,7 +34,7 @@ export function CameraController() {
     const progress = progressRef.current
     const time = state.clock.elapsedTime
 
-    // Dramatic camera path — orbits through space
+
     const orbitRadius = 8 + progress * 15
     const angle = time * 0.08 + progress * Math.PI * 0.5
 
@@ -47,7 +47,7 @@ export function CameraController() {
       0.025
     )
 
-    // Look at a point that drifts through the scene
+
     const lookTarget = new THREE.Vector3(
       Math.sin(time * 0.1) * 5,
       progress * 10,

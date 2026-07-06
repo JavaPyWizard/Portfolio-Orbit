@@ -9,7 +9,7 @@ export function HeroScene() {
   const ringRef = useRef<THREE.Mesh>(null)
   const orbRef = useRef<THREE.Mesh>(null)
 
-  // Central energy orb
+
   const orbMaterial = useMemo(
     () =>
       new THREE.ShaderMaterial({
@@ -59,14 +59,12 @@ export function HeroScene() {
 
   return (
     <group position={[0, 0, -3]}>
-      {/* Central energy orb */}
       <Float speed={2} rotationIntensity={0.5} floatIntensity={1}>
         <Sphere ref={orbRef} args={[1.2, 64, 64]}>
           <primitive object={orbMaterial} attach="material" />
         </Sphere>
       </Float>
 
-      {/* Orbiting rings */}
       <Ring
         ref={ringRef}
         args={[1.8, 2, 128]}
@@ -89,7 +87,6 @@ export function HeroScene() {
         />
       </Ring>
 
-      {/* Orbiting particles */}
       {Array.from({ length: 8 }).map((_, i) => {
         const angle = (i / 8) * Math.PI * 2
         const x = Math.cos(angle) * 2.8

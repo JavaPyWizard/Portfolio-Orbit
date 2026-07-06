@@ -36,7 +36,7 @@ export default function BootSequence() {
   const [typedText, setTypedText] = useState('')
   const progressInterval = useRef<NodeJS.Timeout>()
 
-  // Start boot sequence
+
   useEffect(() => {
     if (bootPhase !== 'initializing') return
 
@@ -44,10 +44,10 @@ export default function BootSequence() {
     setCurrentLine(0)
     setVisibleMessages([])
 
-    // Show skip button after 2 seconds
+
     setTimeout(() => setShowSkip(true), 2000)
 
-    // Simulate progress
+
     let progress = 0
     progressInterval.current = setInterval(() => {
       progress += Math.random() * 8
@@ -60,10 +60,10 @@ export default function BootSequence() {
     }
   }, [bootPhase])
 
-  // Process boot script lines
+
   useEffect(() => {
     if (currentLine >= bootScript.length) {
-      // Boot complete
+
       setBootProgress(100)
       setTimeout(() => {
         completeBoot()
@@ -101,15 +101,11 @@ export default function BootSequence() {
           exit={{ opacity: 0, scale: 1.05 }}
           transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
         >
-          {/* Background grid */}
           <div className="absolute inset-0 bg-grid opacity-20" />
 
-          {/* Central glow */}
           <div className="absolute inset-0 bg-radial-glow opacity-30" />
 
-          {/* Boot Content */}
           <div className="relative z-10 w-full max-w-2xl px-6">
-            {/* ORBIT Logo */}
             <motion.div
               className="text-center mb-12"
               initial={{ opacity: 0, y: -20 }}
@@ -124,7 +120,6 @@ export default function BootSequence() {
               </p>
             </motion.div>
 
-            {/* Terminal Output */}
             <motion.div
               className="bg-surface/80 backdrop-blur-xl border border-primary/20 rounded-xl p-6 mb-8"
               initial={{ opacity: 0, y: 20 }}
@@ -162,7 +157,6 @@ export default function BootSequence() {
               </div>
             </motion.div>
 
-            {/* Progress Bar */}
             <motion.div
               className="relative h-1 bg-surface rounded-full overflow-hidden"
               initial={{ opacity: 0 }}
@@ -180,7 +174,6 @@ export default function BootSequence() {
               {bootProgress.toFixed(0)}% complete
             </p>
 
-            {/* Skip Button */}
             {showSkip && (
               <motion.button
                 className="mt-8 mx-auto block text-muted hover:text-text transition-colors font-mono text-sm"

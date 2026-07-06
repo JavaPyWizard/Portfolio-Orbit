@@ -53,7 +53,6 @@ export default function CertificatesSection() {
   return (
     <section className="relative min-h-screen py-24 z-10" id="certificates">
       <div className="max-w-5xl mx-auto px-6">
-        {/* Section Header */}
         <motion.div
           className="text-center mb-16"
           initial={{ opacity: 0, y: 30 }}
@@ -72,7 +71,6 @@ export default function CertificatesSection() {
           </p>
         </motion.div>
 
-        {/* Certificate Cards */}
         <div className="grid md:grid-cols-2 gap-6">
           {certificates.map((cert, index) => (
             <motion.div
@@ -85,7 +83,6 @@ export default function CertificatesSection() {
               whileHover={{ y: -4 }}
               onClick={() => setSelectedCert(cert.id)}
             >
-              {/* Background Gradient */}
               <div
                 className={`absolute inset-0 bg-gradient-to-br ${cert.color} opacity-0 group-hover:opacity-100 transition-opacity duration-500`}
               />
@@ -116,7 +113,6 @@ export default function CertificatesSection() {
           ))}
         </div>
 
-        {/* Expanded Modal */}
         <AnimatePresence>
           {selectedCert && (
             <motion.div

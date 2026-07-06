@@ -101,13 +101,11 @@ export default function ExperienceSection() {
                   viewport={{ once: true, margin: "-30px" }}
                   transition={{ delay: index * 0.1, duration: 0.5 }}
                 >
-                  {/* Timeline dot */}
                   <div
                     className="absolute left-[21px] md:left-1/2 top-7 w-[10px] h-[10px] rounded-full bg-background border-2 -translate-x-1/2 z-10"
                     style={{ borderColor: exp.accent }}
                   />
 
-                  {/* Card */}
                   <div
                     className={`ml-14 md:ml-0 md:w-1/2 ${isLeft ? "md:pr-10" : "md:pl-10"}`}
                   >
@@ -116,7 +114,6 @@ export default function ExperienceSection() {
                         onClick={() => toggleExpand(exp.id)}
                         className="w-full text-left group"
                       >
-                        {/* Top section: Icon + Text */}
                         <div className="flex items-start gap-4 p-5 pb-3">
                           <div
                             className="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5"
@@ -139,7 +136,6 @@ export default function ExperienceSection() {
                           </div>
                         </div>
 
-                        {/* Bottom section: Period + Chevron */}
                         <div className="flex items-center justify-between px-5 pb-4">
                           <span className="text-xs text-muted">
                             {exp.period}
@@ -154,7 +150,6 @@ export default function ExperienceSection() {
                         </div>
                       </button>
 
-                      {/* Expanded content */}
                       <AnimatePresence>
                         {isExpanded && (
                           <motion.div

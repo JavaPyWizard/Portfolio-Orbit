@@ -39,12 +39,12 @@ export function ParticleField({ count = 500 }: ParticleFieldProps) {
     const velocities = meshRef.current.geometry.attributes.velocity
 
     for (let i = 0; i < count; i++) {
-      // Update position with velocity
+
       positions.array[i * 3] += velocities.array[i * 3]
       positions.array[i * 3 + 1] += velocities.array[i * 3 + 1]
       positions.array[i * 3 + 2] += velocities.array[i * 3 + 2]
 
-      // Wrap around boundaries
+
       if (Math.abs(positions.array[i * 3]) > 30) positions.array[i * 3] *= -1
       if (Math.abs(positions.array[i * 3 + 1]) > 20) positions.array[i * 3 + 1] *= -1
       if (Math.abs(positions.array[i * 3 + 2]) > 20) positions.array[i * 3 + 2] *= -1

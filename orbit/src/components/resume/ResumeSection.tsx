@@ -17,7 +17,6 @@ export default function ResumeSection() {
   return (
     <section className="relative min-h-screen py-24 z-10" id="resume">
       <div className="max-w-4xl mx-auto px-6">
-        {/* Section Header */}
         <motion.div
           className="text-center mb-16"
           initial={{ opacity: 0, y: 30 }}
@@ -37,7 +36,6 @@ export default function ResumeSection() {
         </motion.div>
 
         <div className="grid md:grid-cols-2 gap-8">
-          {/* Preview Card */}
           <motion.div
             className="glass-card p-8 text-center relative overflow-hidden group"
             initial={{ opacity: 0, x: -30 }}
@@ -61,7 +59,6 @@ export default function ResumeSection() {
             </div>
           </motion.div>
 
-          {/* Download Card */}
           <motion.div
             className="glass-card p-8 relative overflow-hidden group"
             initial={{ opacity: 0, x: 30 }}

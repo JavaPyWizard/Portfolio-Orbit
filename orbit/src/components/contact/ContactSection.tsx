@@ -27,15 +27,15 @@ export default function ContactSection() {
     e.preventDefault();
     setSending(true);
 
-    // Option 1: Open mailto in default email client
+
     const mailtoLink = `mailto:divyanshkumarsingh29@gmail.com?subject=${encodeURIComponent(formState.subject)}&body=${encodeURIComponent(
       `Name: ${formState.name}\nEmail: ${formState.email}\n\n${formState.message}`,
     )}`;
 
-    // Open email client
+
     window.location.href = mailtoLink;
 
-    // Show success state
+
     setSubmitted(true);
     setSending(false);
     setFormState({ name: "", email: "", subject: "", message: "" });
@@ -46,7 +46,6 @@ export default function ContactSection() {
   return (
     <section className="relative min-h-screen py-24 z-10" id="contact">
       <div className="max-w-5xl mx-auto px-6">
-        {/* Section Header */}
         <motion.div
           className="text-center mb-16"
           initial={{ opacity: 0, y: 30 }}
@@ -69,7 +68,6 @@ export default function ContactSection() {
         </motion.div>
 
         <div className="grid md:grid-cols-5 gap-8">
-          {/* Contact Info */}
           <motion.div
             className="md:col-span-2 space-y-4"
             initial={{ opacity: 0, x: -30 }}
@@ -155,7 +153,6 @@ export default function ContactSection() {
             </div>
           </motion.div>
 
-          {/* Contact Form */}
           <motion.div
             className="md:col-span-3"
             initial={{ opacity: 0, x: 30 }}

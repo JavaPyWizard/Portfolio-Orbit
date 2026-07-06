@@ -8,7 +8,7 @@ import { ArrowRight, Download, Mail, Github, Linkedin } from 'lucide-react'
 export default function HeroSection() {
   const { setScene } = useOrbitStore()
   const sectionRef = useRef<HTMLDivElement>(null)
-  
+
   const { scrollYProgress } = useScroll({
     target: sectionRef,
     offset: ['start start', 'end start'],
@@ -49,11 +49,10 @@ export default function HeroSection() {
 
   return (
     <section ref={sectionRef} className="relative min-h-screen flex items-center justify-center z-10">
-      <motion.div 
+      <motion.div
         className="max-w-5xl mx-auto px-6 text-center"
         style={{ scale }}
       >
-        {/* Status Badge */}
         <motion.div
           className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/20 mb-8"
           initial={{ opacity: 0, y: 20 }}
@@ -65,7 +64,6 @@ export default function HeroSection() {
           <span className="text-sm text-muted">Available for opportunities</span>
         </motion.div>
 
-        {/* Name */}
         <motion.h1
           className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter mb-4"
           initial={{ opacity: 0, y: 30 }}
@@ -77,7 +75,6 @@ export default function HeroSection() {
           <span className="glow-text">Kumar Singh</span>
         </motion.h1>
 
-        {/* Title Tags */}
         <motion.div
           className="flex flex-wrap items-center justify-center gap-3 mb-8"
           initial={{ opacity: 0, y: 20 }}
@@ -95,7 +92,6 @@ export default function HeroSection() {
           ))}
         </motion.div>
 
-        {/* Description */}
         <motion.p
           className="max-w-2xl mx-auto text-muted text-lg mb-12 leading-relaxed"
           initial={{ opacity: 0, y: 20 }}
@@ -106,7 +102,6 @@ export default function HeroSection() {
           Turning ideas into reliable software through code, curiosity, and continuous learning.
         </motion.p>
 
-        {/* CTA Buttons */}
         <motion.div
           className="flex flex-wrap items-center justify-center gap-4 mb-12"
           initial={{ opacity: 0, y: 20 }}
@@ -137,7 +132,6 @@ export default function HeroSection() {
           </button>
         </motion.div>
 
-        {/* Social Links */}
         <motion.div
           className="flex items-center justify-center gap-4"
           initial={{ opacity: 0 }}
@@ -182,7 +176,6 @@ export default function HeroSection() {
           </a>
         </motion.div>
 
-        {/* Scroll Indicator */}
         <motion.div
           className="absolute bottom-8 left-1/2 -translate-x-1/2"
           initial={{ opacity: 0 }}

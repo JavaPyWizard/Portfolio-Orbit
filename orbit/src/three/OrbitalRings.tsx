@@ -42,7 +42,7 @@ export function OrbitalRings() {
       ring.rotation.y += config.speed * 0.01
       ring.rotation.z += Math.sin(time * 0.3 + i) * 0.002
 
-      // Fade rings as we scroll
+
       const material = (ring as THREE.Mesh).material as THREE.MeshBasicMaterial
       material.opacity = Math.max(0.04, 0.15 - progress * 0.12)
     })

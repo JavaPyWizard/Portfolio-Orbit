@@ -184,7 +184,7 @@ export default function LeetcodeSection() {
       const hardSolved =
         acStats.find((s: any) => s.difficulty === "Hard")?.count || 0;
 
-      // Skill tags
+
       const tagStats = user.tagProblemCounts;
       const skillTags: { name: string; solved: number; level: string }[] = [];
       if (tagStats) {
@@ -313,7 +313,6 @@ export default function LeetcodeSection() {
 
         {!loading && data && (
           <>
-            {/* Stats Cards */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
               <div className="glass-card p-5 text-center">
                 <CheckCircle className="w-5 h-5 text-emerald-400 mx-auto mb-2" />
@@ -347,7 +346,6 @@ export default function LeetcodeSection() {
               </div>
             </div>
 
-            {/* Problem Distribution + Recent */}
             <div className="grid md:grid-cols-2 gap-8 mb-8">
               <div className="glass-card p-6">
                 <h4 className="text-sm font-semibold text-text mb-5">
@@ -455,7 +453,6 @@ export default function LeetcodeSection() {
               </div>
             </div>
 
-            {/* Toicss */}
             {data.skillTags && data.skillTags.length > 0 && (
               <div className="glass-card p-6 mb-8">
                 <h4 className="text-sm font-semibold text-text mb-4 flex items-center gap-2">
@@ -480,7 +477,6 @@ export default function LeetcodeSection() {
               </div>
             )}
 
-            {/* Badges */}
             {data.badges && data.badges.length > 0 && (
               <motion.div
                 className="glass-card p-6"

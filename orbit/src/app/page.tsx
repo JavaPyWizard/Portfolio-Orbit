@@ -52,7 +52,7 @@ export default function Home() {
   const scrollProgressRef = useRef(0);
   const isManualScrolling = useRef(false);
 
-  // Performance detection
+
   const checkPerformance = useCallback(() => {
     let lowFps = false;
     let frameCount = 0;
@@ -79,11 +79,11 @@ export default function Home() {
     checkPerformance();
   }, [checkPerformance]);
 
-  // Listen for manual nav events
+
   useEffect(() => {
     const handleManualNav = () => {
       isManualScrolling.current = true;
-      // Re-enable observer after scroll completes
+
       setTimeout(() => {
         isManualScrolling.current = false;
       }, 1500);
@@ -94,7 +94,7 @@ export default function Home() {
       window.removeEventListener("orbit-manual-nav", handleManualNav);
   }, []);
 
-  // Track scroll progress for 3D camera
+
   useEffect(() => {
     if (!isBootComplete) return;
 
@@ -116,13 +116,13 @@ export default function Home() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [isBootComplete]);
 
-  // Intersection Observer - only active during natural scrolling
+
   useEffect(() => {
     if (!isBootComplete) return;
 
     const observer = new IntersectionObserver(
       (entries) => {
-        // Skip if user manually clicked a nav item
+
         if (isManualScrolling.current) return;
 
         entries.forEach((entry) => {

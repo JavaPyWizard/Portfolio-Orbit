@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* === ORBIT Global Styles === */
+
 
 @font-face {
   font-family: 'Geist Sans';
@@ -74,7 +74,7 @@ body {
   min-height: 100vh;
 }
 
-/* === Scrollbar === */
+
 ::-webkit-scrollbar {
   width: 6px;
 }
@@ -92,20 +92,20 @@ body {
   background: #8B5CF6;
 }
 
-/* === Selection === */
+
 ::selection {
   background: rgba(59, 130, 246, 0.3);
   color: #F8FAFC;
 }
 
-/* === Focus === */
+
 :focus-visible {
   outline: 2px solid #3B82F6;
   outline-offset: 2px;
   border-radius: 4px;
 }
 
-/* === Reduced Motion === */
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -117,7 +117,7 @@ body {
   }
 }
 
-/* === Glass Card Utility === */
+
 .glass-card {
   background: rgba(21, 28, 52, 0.8);
   backdrop-filter: blur(20px);
@@ -130,21 +130,21 @@ body {
   box-shadow: 0 0 30px rgba(59, 130, 246, 0.1);
 }
 
-/* === Glow Text Utility === */
+
 .glow-text {
   text-shadow: 0 0 20px rgba(59, 130, 246, 0.5),
                0 0 40px rgba(59, 130, 246, 0.2);
 }
 
-/* === Grid Background === */
+
 .bg-grid {
-  background-image: 
+  background-image:
     linear-gradient(rgba(59, 130, 246, 0.05) 1px, transparent 1px),
     linear-gradient(90deg, rgba(59, 130, 246, 0.05) 1px, transparent 1px);
   background-size: 60px 60px;
 }
 
-/* === Magnetic Button === */
+
 .magnetic-btn {
   transition: transform 0.2s cubic-bezier(0.25, 0.1, 0.25, 1);
 }
@@ -157,7 +157,7 @@ body {
   transform: scale(0.98);
 }
 
-/* === Performance Mode === */
+
 .performance-mode .bloom-effect,
 .performance-mode .particle-field,
 .performance-mode .expensive-shader {

@@ -43,7 +43,7 @@ function GeometricShape({ position, color, geometry, delay }: {
     const scale = 1 + Math.sin(t * 0.4) * 0.3
     meshRef.current.scale.setScalar(scale * (0.6 + progress * 0.8))
 
-    // Reduce opacity as we scroll
+
     const material = meshRef.current.material as THREE.MeshBasicMaterial
     material.opacity = Math.max(0.05, 0.12 - progress * 0.08)
   })
